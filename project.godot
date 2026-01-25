@@ -1,0 +1,25 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Chronos"
+run/main_scene="uid://c24vv8seje5jr"
+config/features=PackedStringArray("4.5", "Forward Plus")
+config/icon="res://icon.svg"
+
+[autoload]
+
+CMM="*res://scripts/master_manager.gd"
+SignalBus="*res://scripts/signal_bus.gd"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/Hidefolders/plugin.cfg", "res://addons/script-ide/plugin.cfg")

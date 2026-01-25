@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://by088o8eu708t"]
+
+[ext_resource type="Script" uid="uid://onnctmv3xq2v" path="res://tabs_scenes/settings_tab/settings_tab.gd" id="1_elqqd"]
+
+[node name="SettingsTab" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_elqqd")
+tab_icon = "Settings"
+tab_name = "Settings"
+metadata/_custom_type_script = "uid://onnctmv3xq2v"

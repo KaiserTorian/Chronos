@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="GlobalRefs" load_steps=5 format=3 uid="uid://cw8o3la0a28h8"]
+
+[ext_resource type="Script" uid="uid://mb7d1c4kyho6" path="res://scripts/_global_refs.gd" id="1_m88ie"]
+[ext_resource type="PackedScene" uid="uid://cfu4cmlxdfh27" path="res://tabs_scenes/kanban_tab/kanban_card.tscn" id="1_u1mun"]
+[ext_resource type="PackedScene" uid="uid://04emlvbtdc3j" path="res://tabs_scenes/kanban_tab/kanban_column.tscn" id="2_ym8bj"]
+[ext_resource type="PackedScene" uid="uid://uev8jjdr6kq8" path="res://tabs_scenes/kanban_tab/kanban_task.tscn" id="3_u1mun"]
+
+[resource]
+script = ExtResource("1_m88ie")
+kanban_card_column = ExtResource("2_ym8bj")
+kanban_card = ExtResource("1_u1mun")
+kanban_task = ExtResource("3_u1mun")
+metadata/_custom_type_script = "uid://mb7d1c4kyho6"

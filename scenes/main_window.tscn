@@ -1,0 +1,59 @@
+[gd_scene load_steps=4 format=3 uid="uid://c24vv8seje5jr"]
+
+[ext_resource type="Script" uid="uid://coki8ey8fd11q" path="res://scenes/main_window.gd" id="1_ac7cv"]
+[ext_resource type="Theme" uid="uid://cv7t7ojcod3h6" path="res://style/default_theme.tres" id="1_ax7xg"]
+[ext_resource type="PackedScene" uid="uid://dgmusahf0f4rm" path="res://tabs_scenes/kanban_tab/kanban.tscn" id="2_52e18"]
+
+[node name="MainWindow" type="Control" node_paths=PackedStringArray("tab_list", "tab_display")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ac7cv")
+all_tabs = Array[PackedScene]([ExtResource("2_52e18")])
+tab_list = NodePath("TabView/TabSelScrollBox/MarginContainer/TabList")
+tab_display = NodePath("TabView/TabDisplay")
+metadata/_custom_type_script = "uid://coki8ey8fd11q"
+
+[node name="Background" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TabView" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+
+[node name="TabSelScrollBox" type="ScrollContainer" parent="TabView"]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.0
+theme = ExtResource("1_ax7xg")
+horizontal_scroll_mode = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="TabView/TabSelScrollBox"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="TabList" type="VBoxContainer" parent="TabView/TabSelScrollBox/MarginContainer"]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+
+[node name="TabDisplay" type="Control" parent="TabView"]
+layout_mode = 2
+size_flags_horizontal = 3

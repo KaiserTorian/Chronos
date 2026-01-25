@@ -1,0 +1,16 @@
+{
+	"nodes":[
+		{"id":"f57c05d6dfdca18a","x":-635,"y":-580,"width":1075,"height":470,"color":"1","type":"group","label":"Save Folder"},
+		{"id":"6dae0992fe90d11e","x":-635,"y":20,"width":1055,"height":320,"color":"4","type":"group","label":"Card folder"},
+		{"id":"e8b33198faa22275","x":-615,"y":40,"width":280,"height":280,"type":"text","text":"Card_1.tres\n\nNorm Card class\n\nvar owner_column = col_1\n\nvar points:Array[String]"},
+		{"id":"c1123831f7b5c009","type":"text","text":"Card_2.tres\n\nNorm Card class\n\nvar owner_column = col_1\n\nvar points:Array[String]","x":-260,"y":40,"width":280,"height":280},
+		{"id":"758267b5cb7959e4","type":"text","text":"Card_3.tres\n\nNorm Card class\n\nvar owner_column = col_2\n\nvar points:Array[String]","x":120,"y":40,"width":280,"height":280},
+		{"id":"381e3bad94388755","x":-260,"y":-500,"width":280,"height":290,"type":"text","text":"Columns.tres\n\nArray of all columns\n[\n\tColumn_1:[\n\t\tCard_1.tres,\n\t\tCard_2.tres],\n\tColumn_2:[Card_3]]"}
+	],
+	"edges":[
+		{"id":"f7e62206ea0bb192","fromNode":"381e3bad94388755","fromSide":"bottom","toNode":"e8b33198faa22275","toSide":"top"},
+		{"id":"bea0197f4c1f3f24","fromNode":"381e3bad94388755","fromSide":"bottom","toNode":"c1123831f7b5c009","toSide":"top"},
+		{"id":"05ba51d073c81256","fromNode":"381e3bad94388755","fromSide":"bottom","toNode":"758267b5cb7959e4","toSide":"top"},
+		{"id":"79768630825d69d5","fromNode":"f57c05d6dfdca18a","fromSide":"bottom","toNode":"6dae0992fe90d11e","toSide":"top"}
+	]
+}

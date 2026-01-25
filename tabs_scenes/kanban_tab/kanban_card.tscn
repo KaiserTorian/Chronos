@@ -1,0 +1,73 @@
+[gd_scene load_steps=2 format=3 uid="uid://cfu4cmlxdfh27"]
+
+[ext_resource type="Script" uid="uid://bxoc64u4elcen" path="res://tabs_scenes/kanban_tab/kanban_card.gd" id="1_djtia"]
+
+[node name="KanbanTabCard" type="MarginContainer" node_paths=PackedStringArray("card_title", "new_task_button", "collapse_button", "list_panel", "task_container")]
+custom_minimum_size = Vector2(0, 40)
+anchors_preset = -1
+anchor_right = 0.24700001
+offset_bottom = 40.0
+size_flags_horizontal = 3
+mouse_filter = 0
+script = ExtResource("1_djtia")
+card_title = NodePath("VBoxContainer/TopPanel/CardTitle")
+new_task_button = NodePath("VBoxContainer/TopPanel/NewTask")
+collapse_button = NodePath("VBoxContainer/TopPanel/Collapse")
+list_panel = NodePath("VBoxContainer/ListPanel")
+task_container = NodePath("VBoxContainer/ListPanel/TaskContainer")
+metadata/_custom_type_script = "uid://bxoc64u4elcen"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="TopPanel" type="Panel" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="CardTitle" type="LineEdit" parent="VBoxContainer/TopPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.021000002
+anchor_top = 0.1
+anchor_right = 0.689
+anchor_bottom = 0.87500006
+offset_left = 0.024575233
+offset_right = -0.050827026
+
+[node name="NewTask" type="Button" parent="VBoxContainer/TopPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.70327824
+anchor_top = 0.1
+anchor_right = 0.8719078
+anchor_bottom = 0.8750001
+offset_left = -0.113600254
+offset_right = -0.09613037
+text = "Add"
+metadata/_edit_use_anchors_ = true
+
+[node name="Collapse" type="Button" parent="VBoxContainer/TopPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.889144
+anchor_top = 0.1
+anchor_right = 0.99100006
+anchor_bottom = 0.8168751
+offset_left = -0.0005950928
+offset_right = 0.01687622
+offset_bottom = 2.324997
+text = "↓"
+metadata/_edit_use_anchors_ = true
+
+[node name="ListPanel" type="MarginContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 15)
+layout_mode = 2
+
+[node name="TodoBackground" type="Panel" parent="VBoxContainer/ListPanel"]
+layout_mode = 2
+
+[node name="TaskContainer" type="VBoxContainer" parent="VBoxContainer/ListPanel"]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2

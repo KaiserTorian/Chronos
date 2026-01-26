@@ -2,49 +2,53 @@ extends TabWindow
 class_name KanbanTab
 
 @export var debug_list: Array[KanbanColumnRes]
- 
+
 @export_group("Nodes")
 @export var expandet_card: Panel
-@export var column_container: HBoxContainer
+@export var spaces_container: TabContainer
+@export var add_space_tab: Control
 @export var save_button: Button
 @export var new_button: Button
 
+var current_space: KanbanSpace
 
 
 func _ready() -> void:
 	#Signals Start
-	SignalBus.new_card.connect(new_card)
-	
+	spaces_container.tab_clicked.connect(change_space)
 	save_button.pressed.connect(save_kanban_tab)
 	new_button.pressed.connect(new_column)
 	#Signals End
 	
-	load_kanban_list()
+	#load_kanban_list()
 	expandet_card.visible = false
+
+
+func change_space(index: int):
+	var space = self.spaces_container.get_child(index)
+	
+	if space == self.add_space_tab:
+		space = new_space()
+		self.spaces_container.current_tab = space.get_index()
+		
+	self.current_space = space
 	
 
-
-func load_kanban_list():
-	for column_res in debug_list:
-		var column = CMM._GLOBAL_REFS.kanban_card_column.instantiate() as KanbanColumn
-		column.prefab = column_res
-		column_container.add_child(column)
+func new_space() -> KanbanSpace:
+	var space = CMM._GLOBAL_REFS.kanban_space.instantiate() as KanbanSpace
+	space.space_res = KanbanSpaceRes.new()
+	spaces_container.add_child(space)
+	self.spaces_container.move_child(add_space_tab, self.spaces_container.get_child_count(false) - 1)
+	return space
 
 
 func new_column():
-	var column = CMM._GLOBAL_REFS.kanban_card_column.instantiate() as KanbanColumn
-	column.prefab = KanbanColumnRes.new()
-	column_container.add_child(column)
+	if self.current_space == null: 
+		return
+	
+	self.current_space.new_column()
 
 
-func new_card(column: KanbanColumn):
-	var card = CMM._GLOBAL_REFS.kanban_card.instantiate() as KanbanCard
-	card.prefab = KanbanCardRes.new()
-	column.card_container.add_child(card)
-
-func new_task(_card: KanbanCard): ## WARNING: Change all "todo" to tasks
-	pass
 
 func save_kanban_tab():
-	print("Save")
 	pass

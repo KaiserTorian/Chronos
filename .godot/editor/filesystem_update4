@@ -1,1 +1,5 @@
+res://tabs_scenes/kanban_tab/kanban_space.tscn
+res://addons/ui_utils/context_menu/cm_manager.gd
+res://addons/ui_utils/ui_utils.gd
 res://tabs_scenes/kanban_tab/kanban_column.tscn
+res://addons/ui_utils/context_menu/cm_frame.gd

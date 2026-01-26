@@ -29,5 +29,6 @@ func load_kanban_cards():
 
 
 func add_card():
-	SignalBus.new_card.emit(self)
-	
+	var card = CMM._GLOBAL_REFS.kanban_card.instantiate() as KanbanCard
+	card.card_res = KanbanCardRes.new()
+	self.card_container.add_child(card)

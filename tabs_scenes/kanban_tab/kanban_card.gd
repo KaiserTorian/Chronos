@@ -10,7 +10,7 @@ class_name KanbanCard
 @export var list_panel: MarginContainer
 @export var task_container: VBoxContainer
 
-var prefab: KanbanCardRes
+var card_res: KanbanCardRes
 var collapsed: bool = false
 
 
@@ -18,7 +18,7 @@ func _ready() -> void:
 	# Signals
 	collapse_button.pressed.connect(collapse_toggle)
 	new_task_button.pressed.connect(add_task)
-	self.card_title.text = prefab.card_title
+	self.card_title.text = card_res.card_title
 	load_tasks()
 
 
@@ -43,7 +43,7 @@ func collapse_toggle():
 
 
 func load_tasks():
-	for task in prefab.tasks:
+	for task in card_res.tasks:
 		var new_label = Label.new()
 		new_label.text = task
 		self.task_container.add_child(new_label)

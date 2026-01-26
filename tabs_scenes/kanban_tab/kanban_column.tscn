@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://04emlvbtdc3j"]
+[gd_scene load_steps=3 format=3 uid="uid://04emlvbtdc3j"]
 
 [ext_resource type="Script" uid="uid://d02v26fi7h7x3" path="res://tabs_scenes/kanban_tab/kanban_column.gd" id="1_kkka5"]
+[ext_resource type="Script" uid="uid://dyvlsaro2m6kk" path="res://addons/ui_utils/context_menu/cm_frame.gd" id="2_vp52l"]
 
 [node name="CardColumn" type="Control" node_paths=PackedStringArray("column_title", "card_container", "add_card_button")]
 custom_minimum_size = Vector2(250, 0)
@@ -91,3 +92,23 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_constants/separation = 6
+
+[node name="ContextMenuFrame" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+mouse_behavior_recursive = 2
+script = ExtResource("2_vp52l")
+metadata/_custom_type_script = "uid://dyvlsaro2m6kk"
+
+[node name="Panel" type="Panel" parent="ContextMenuFrame"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

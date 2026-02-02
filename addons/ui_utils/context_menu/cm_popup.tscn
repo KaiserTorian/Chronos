@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://c22w7o44a1kae"]
+
+[ext_resource type="Script" uid="uid://c7jxyu4nolxro" path="res://addons/ui_utils/context_menu/cm_popup.gd" id="1_ib8re"]
+
+[node name="CmPopup" type="MarginContainer" unique_id=775629246]
+custom_minimum_size = Vector2(150, 20)
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 0
+script = ExtResource("1_ib8re")
+metadata/_custom_type_script = "uid://c7jxyu4nolxro"
+
+[node name="Panel" type="Panel" parent="." unique_id=1883112377]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=2068923697]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1814812897]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer" unique_id=710236028]
+layout_mode = 2
+text = "Test"
+
+[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1593430787]
+layout_mode = 2
+text = "Test"
+
+[node name="Label3" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1287849331]
+layout_mode = 2
+text = "Test"
+
+[node name="Label4" type="Label" parent="MarginContainer/VBoxContainer" unique_id=491560227]
+layout_mode = 2
+text = "Test"
+
+[node name="Label5" type="Label" parent="MarginContainer/VBoxContainer" unique_id=452160001]
+layout_mode = 2
+text = "Test"

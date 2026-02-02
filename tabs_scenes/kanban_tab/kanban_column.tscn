@@ -1,9 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://04emlvbtdc3j"]
+[gd_scene format=3 uid="uid://04emlvbtdc3j"]
 
 [ext_resource type="Script" uid="uid://d02v26fi7h7x3" path="res://tabs_scenes/kanban_tab/kanban_column.gd" id="1_kkka5"]
 [ext_resource type="Script" uid="uid://dyvlsaro2m6kk" path="res://addons/ui_utils/context_menu/cm_frame.gd" id="2_vp52l"]
 
-[node name="CardColumn" type="Control" node_paths=PackedStringArray("column_title", "card_container", "add_card_button")]
+[node name="CardColumn" type="Control" unique_id=921586771 node_paths=PackedStringArray("column_title", "card_container", "add_card_button")]
 custom_minimum_size = Vector2(250, 0)
 layout_mode = 3
 anchor_right = 0.2169375
@@ -18,7 +18,7 @@ add_card_button = NodePath("Column/Panel/AddCard")
 metadata/_custom_type_script = "uid://d02v26fi7h7x3"
 metadata/_edit_use_anchors_ = true
 
-[node name="ColumnBackground" type="Panel" parent="."]
+[node name="ColumnBackground" type="Panel" parent="." unique_id=1092546618]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -26,7 +26,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Column" type="VBoxContainer" parent="."]
+[node name="Column" type="VBoxContainer" parent="." unique_id=2048900388]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -34,11 +34,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Panel" type="Panel" parent="Column"]
+[node name="Panel" type="Panel" parent="Column" unique_id=1233294041]
 custom_minimum_size = Vector2(0, 70)
 layout_mode = 2
 
-[node name="ColumnTitle" type="LineEdit" parent="Column/Panel"]
+[node name="ColumnTitle" type="LineEdit" parent="Column/Panel" unique_id=1848680608]
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
@@ -49,7 +49,7 @@ placeholder_text = "Card Header"
 alignment = 1
 caret_blink = true
 
-[node name="AddCard" type="Button" parent="Column/Panel"]
+[node name="AddCard" type="Button" parent="Column/Panel" unique_id=1056983446]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 1
 anchors_preset = -1
@@ -65,7 +65,7 @@ focus_mode = 0
 text = "ADD "
 metadata/_edit_use_anchors_ = true
 
-[node name="DelColumn" type="Button" parent="Column/Panel"]
+[node name="DelColumn" type="Button" parent="Column/Panel" unique_id=604507166]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 1
 anchors_preset = -1
@@ -83,17 +83,17 @@ focus_mode = 0
 text = "DEL"
 metadata/_edit_use_anchors_ = true
 
-[node name="ScrollCardContainer" type="ScrollContainer" parent="Column"]
+[node name="ScrollCardContainer" type="ScrollContainer" parent="Column" unique_id=1938022086]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="CardContainer" type="VBoxContainer" parent="Column/ScrollCardContainer"]
+[node name="CardContainer" type="VBoxContainer" parent="Column/ScrollCardContainer" unique_id=525515988]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_constants/separation = 6
 
-[node name="ContextMenuFrame" type="Control" parent="."]
+[node name="ContextMenuFrame" type="Control" parent="." unique_id=1370625861]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -104,11 +104,3 @@ mouse_filter = 2
 mouse_behavior_recursive = 2
 script = ExtResource("2_vp52l")
 metadata/_custom_type_script = "uid://dyvlsaro2m6kk"
-
-[node name="Panel" type="Panel" parent="ContextMenuFrame"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2

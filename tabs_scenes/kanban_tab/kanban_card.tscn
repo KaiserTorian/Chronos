@@ -1,8 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://cfu4cmlxdfh27"]
+[gd_scene format=3 uid="uid://cfu4cmlxdfh27"]
 
 [ext_resource type="Script" uid="uid://bxoc64u4elcen" path="res://tabs_scenes/kanban_tab/kanban_card.gd" id="1_djtia"]
 
-[node name="KanbanTabCard" type="MarginContainer" node_paths=PackedStringArray("card_title", "new_task_button", "collapse_button", "list_panel", "task_container")]
+[node name="KanbanTabCard" type="MarginContainer" unique_id=2049230298 node_paths=PackedStringArray("card_title", "new_task_button", "collapse_button", "list_panel", "task_container")]
 custom_minimum_size = Vector2(0, 40)
 anchors_preset = -1
 anchor_right = 0.24700001
@@ -17,16 +17,16 @@ list_panel = NodePath("VBoxContainer/ListPanel")
 task_container = NodePath("VBoxContainer/ListPanel/TaskContainer")
 metadata/_custom_type_script = "uid://bxoc64u4elcen"
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1109120765]
 layout_mode = 2
 theme_override_constants/separation = 0
 
-[node name="TopPanel" type="Panel" parent="VBoxContainer"]
+[node name="TopPanel" type="Panel" parent="VBoxContainer" unique_id=159694050]
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 size_flags_vertical = 0
 
-[node name="CardTitle" type="LineEdit" parent="VBoxContainer/TopPanel"]
+[node name="CardTitle" type="LineEdit" parent="VBoxContainer/TopPanel" unique_id=1214955337]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.021000002
@@ -36,7 +36,7 @@ anchor_bottom = 0.87500006
 offset_left = 0.024575233
 offset_right = -0.050827026
 
-[node name="NewTask" type="Button" parent="VBoxContainer/TopPanel"]
+[node name="NewTask" type="Button" parent="VBoxContainer/TopPanel" unique_id=36946769]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.70327824
@@ -48,7 +48,7 @@ offset_right = -0.09613037
 text = "Add"
 metadata/_edit_use_anchors_ = true
 
-[node name="Collapse" type="Button" parent="VBoxContainer/TopPanel"]
+[node name="Collapse" type="Button" parent="VBoxContainer/TopPanel" unique_id=632064506]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.889144
@@ -61,13 +61,13 @@ offset_bottom = 2.324997
 text = "↓"
 metadata/_edit_use_anchors_ = true
 
-[node name="ListPanel" type="MarginContainer" parent="VBoxContainer"]
+[node name="ListPanel" type="MarginContainer" parent="VBoxContainer" unique_id=1216597145]
 custom_minimum_size = Vector2(0, 15)
 layout_mode = 2
 
-[node name="TodoBackground" type="Panel" parent="VBoxContainer/ListPanel"]
+[node name="TodoBackground" type="Panel" parent="VBoxContainer/ListPanel" unique_id=909509866]
 layout_mode = 2
 
-[node name="TaskContainer" type="VBoxContainer" parent="VBoxContainer/ListPanel"]
+[node name="TaskContainer" type="VBoxContainer" parent="VBoxContainer/ListPanel" unique_id=853907769]
 custom_minimum_size = Vector2(20, 0)
 layout_mode = 2
